@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "ignorePatterns": ["node_modules", "dist", "build"],
+  // "extends": [
+  //   "eslint:recommended",
+  //   "plugin:react/recommended",
+  //   "plugin:react-hooks/recommended",
+  //   "plugin:jsx-a11y/recommended",
+  //   "plugin:import/recommended",
+  //   "plugin:react/jsx-runtime",
+  //   "prettier"
+  // ],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react/recommended"
+  ],
+  "overrides": [],
+  // "parser": "babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "plugins": ["react", "react", "import", "react-hooks", "jsx-a11y", "prettier"],
+
+  // "rules": {
+  //   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+  //   "react/prop-types": 0,
+  //   "semi": ["error", "never"],
+  //   "quotes": ["error", "single"],
+  //   "import/no-unresolved": [2, { "caseSensitive": false }],
+  //   "import/order": [
+  //     2,
+  //     {
+  //       "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+  //       "newlines-between": "always"
+  //     }
+  //   ]
+  // },
+  "rules": {
+    "react/state-in-constructor": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    // "indent": ["error", 2],
+    "indent": ["error", 2, { "CallExpression": { "arguments": 1 }, "SwitchCase": 1 }],
+    "no-plusplus": "off",
+    "no-param-reassign": 0,
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "linebreak-style": [0, "unix"],
+    "quotes": ["error", "single"],
+    "import/no-unresolved": [2, { "caseSensitive": false }],
+    "import/order": [
+      2,
+      {
+        "groups": ["index", "sibling", "parent", "internal", "external", "builtin", "object", "type"]
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
