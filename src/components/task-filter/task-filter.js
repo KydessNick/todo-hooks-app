@@ -9,14 +9,10 @@ export default function TaskFilter(props) {
   let key = 0;
 
   const { renderOptions, renderMode, onRenderModeChange } = props;
-  console.log(renderMode, renderMode);
   const items = renderOptions.map((option) => (
     <li key={key++}>
       <button
-        onClick={() => {
-          console.log(renderMode, renderMode, option);
-          return onRenderModeChange(option);
-        }}
+        onClick={() => onRenderModeChange(option)}
         className={renderMode === option ? 'selected' : null}
         type="button"
       >
