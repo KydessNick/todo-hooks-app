@@ -85,7 +85,7 @@ export default function App() {
     });
   };
 
-  const { tasks, description, minutes, seconds } = tasksState;
+  const { tasks } = tasksState;
 
   const itemsLeft = tasks.reduce((acc, task) => {
     if (!task.completed) acc++;
@@ -95,9 +95,8 @@ export default function App() {
     <section className="todoapp">
       <header className="header">
         <h1>todos</h1>
-        <NewTaskForm onItemAdded={addTask} description={description} minutes={minutes} seconds={seconds} />
+        <NewTaskForm onItemAdded={addTask} />
       </header>
-
       <section className="main">
         <TodoList
           tasks={tasks}
